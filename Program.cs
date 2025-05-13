@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
+using System.Globalization;
 
 namespace SupermarketWEB
 {
@@ -34,6 +35,10 @@ namespace SupermarketWEB
             app.UseAuthorization();
 
             app.MapRazorPages();
+
+            var cultureInfo = new CultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
             app.Run();
         }
